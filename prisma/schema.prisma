@@ -18,14 +18,39 @@ model User {
   email         String?         @unique
   emailVerified DateTime?
   image         String?
+  password      String?
   accounts      Account[]
   sessions      Session[]
   role          Role
   // Optional for WebAuthn support
   Authenticator Authenticator[]
 
+  marks Mark[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Assignment {
+  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  subject     String
+  description String?
+
+  mark Mark[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Mark {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  userId       String @db.ObjectId
+  assignmentId String @db.ObjectId
+  marks        Int
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignment Assignment @relation(fields: [assignmentId], references: [id], onDelete: Cascade)
 }
 
 model Account {

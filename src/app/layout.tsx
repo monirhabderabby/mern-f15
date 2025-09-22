@@ -1,7 +1,7 @@
-import Navbar from "@/components/shared/navbar";
 import { ThemeProvider } from "@/provider/theme-provider";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 const raleway = Raleway({
   subsets: ["latin"],
@@ -28,8 +28,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
           {children}
+          <Toaster richColors position="bottom-right" />
         </ThemeProvider>
       </body>
     </html>
