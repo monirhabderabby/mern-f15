@@ -41,10 +41,10 @@ export function LeaderboardTable({
               className="hover:bg-gray-50 dark:hover:bg-gray-50/5 cursor-pointer"
               onClick={() => router.push(`/result/${student.id}`)}
             >
-              <td className="px-4 py-2 border font-medium">
-                {index + 1} {getSymbol(index)}
+              <td className="px-4 py-2 border font-medium">{index + 1}</td>
+              <td className="px-4 py-2 border">
+                {student.name} {getSymbol(index)}
               </td>
-              <td className="px-4 py-2 border">{student.name}</td>
               <td className="px-4 py-2 border">{student.totalMarks}</td>
             </tr>
           ))}
