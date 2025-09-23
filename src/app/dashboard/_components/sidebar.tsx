@@ -9,8 +9,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import {
   ChevronRight,
+  DiamondMinus,
   FileText,
-  Laptop,
   LogOut,
   User,
   Users,
@@ -29,13 +29,13 @@ const routes = [
     id: 3,
     label: "Assignment",
     icon: FileText,
-    href: "/services",
+    href: "/dashboard/assignment",
   },
   {
     id: 4,
-    label: "Profiles",
-    icon: Laptop,
-    href: "/profiles",
+    label: "Marks",
+    icon: DiamondMinus,
+    href: "/marks",
   },
 ];
 
@@ -59,8 +59,8 @@ const Sidebar = () => {
               {routes.map((route) => {
                 const Icon = route.icon;
                 const isActive =
-                  route.href === "/"
-                    ? pathname === "/"
+                  route.href === "/dashboard"
+                    ? pathname === "/dashboard"
                     : pathname.startsWith(route.href);
 
                 return (
