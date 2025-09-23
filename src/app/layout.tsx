@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@/provider/theme-provider";
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 import { Toaster } from "sonner";
 import "./globals.css";
 const raleway = Raleway({
@@ -30,6 +31,7 @@ export default function RootLayout({
         >
           {children}
           <Toaster richColors position="bottom-right" />
+          <NextTopLoader showSpinner={false} color="#045EAB" />
         </ThemeProvider>
       </body>
     </html>
