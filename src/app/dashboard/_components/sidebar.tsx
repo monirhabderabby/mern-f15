@@ -35,7 +35,7 @@ const routes = [
     id: 4,
     label: "Marks",
     icon: DiamondMinus,
-    href: "/marks",
+    href: "/dashboard/marks",
   },
 ];
 
