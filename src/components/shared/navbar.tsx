@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ModeToggle } from "../ui/mode-toggle";
 
@@ -6,13 +5,8 @@ const Navbar = () => {
   return (
     <div className="w-full h-[60px] border border-input border-b">
       <div className="container mx-auto flex justify-between items-center h-full">
-        <Link href="/">
-          <Image
-            src="https://files.edgestore.dev/rzoslohhv2lk81i6/MERNF15/_public/logo.png"
-            width={40}
-            height={40}
-            alt="Logo"
-          />
+        <Link href="/" className="text-blue-700 font-semibold">
+          BdCalling It Ltd
         </Link>
         <ModeToggle />
       </div>
